@@ -1,9 +1,21 @@
-# easyjet-test
-Easyjet test webapp
+# easyJet-test
+easyJet test webapp
 
 ## Instructions
 ```sh
-1) Open Terminal
-2) Execute npm install.
-3) npm run build.  (compiles jsx > js & less > css)
+1) Open Terminal and navigate to folder
+2) $ npm install
+3) $ npm run build
 ```
+
+## Detail
+```sh
+npm install
+```
+Installs React/React Dom, and all relevent dev dependences. 
+
+```sh
+npm run build
+```
+Compiles the JSX to JS 
+Compiles less to css & minified css
