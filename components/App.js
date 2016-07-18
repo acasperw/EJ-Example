@@ -1,15 +1,19 @@
 var React = require('react');
 
 var GlobalHeader = require('./GlobalHeader');
-
-
-
 var GlobalFooter = require('./GlobalFooter');
 
-var Search = require('./Search');
+
+// Data
+var headerData = [
+  {text: "Sign In", link: "/sign-in/"},
+  {text: "Help", link: "/help/"}
+];
+
+//var Search = require('./Search');
 //var Map = require('./Map');
-var CurrentLocation = require('./CurrentLocation');
-var LocationList = require('./LocationList');
+//var CurrentLocation = require('./CurrentLocation');
+//var LocationList = require('./LocationList');
 
 
 var App = React.createClass({
@@ -141,15 +145,7 @@ var App = React.createClass({
 		return (
 
 			<div>
-				<GlobalHeader />
-
-				<Search onSearch={this.searchForAddress} />
-				<Map lat={this.state.mapCoordinates.lat} lng={this.state.mapCoordinates.lng} />
-				<CurrentLocation address={this.state.currentAddress} 
-					favorite={this.isAddressInFavorites(this.state.currentAddress)} 
-					onFavoriteToggle={this.toggleFavorite} />
-				<LocationList locations={this.state.favorites} activeLocationAddress={this.state.currentAddress} 
-					onClick={this.searchForAddress} />
+				<GlobalHeader data={headerData} />
 
 				<GlobalFooter />
 			</div>
@@ -158,3 +154,13 @@ var App = React.createClass({
 });
 
 module.exports = App;
+
+/*
+<Search onSearch={this.searchForAddress} />
+<Map lat={this.state.mapCoordinates.lat} lng={this.state.mapCoordinates.lng} />
+<CurrentLocation address={this.state.currentAddress} 
+favorite={this.isAddressInFavorites(this.state.currentAddress)} 
+onFavoriteToggle={this.toggleFavorite} />
+<LocationList locations={this.state.favorites} activeLocationAddress={this.state.currentAddress} 
+onClick={this.searchForAddress} />
+*/
