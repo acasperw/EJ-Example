@@ -1,0 +1,110 @@
+/* Base Colours */
+/* Base Styles */
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+html {
+  overflow-y: scroll;
+}
+body {
+  background-color: #fff;
+  color: #222;
+  font-size: medium;
+  font-family: arial, sans-serif;
+  margin: 0 auto;
+  min-width: 320px;
+  font-weight: 300;
+  height: 100%;
+}
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+  height: auto;
+}
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+}
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+  line-height: normal;
+}
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+iframe {
+  display: block;
+}
+p {
+  line-height: 1.4em;
+}
+.hide {
+  position: absolute;
+  left: -200em;
+  top: 0;
+}
+.hideme {
+  opacity: 0;
+}
+a {
+  color: #2d2d2d;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: #2d2d2d;
+  text-decoration: underline;
+}
+a:hover,
+a:focus,
+a:active {
+  outline: 0;
+}
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px 5px 10px 0;
+  min-width: 150px;
+  text-align: center;
+  overflow: hidden;
+  background: #FF6600;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  border: none;
+  transition: background 0.5s ease-in-out, color 0.5s ease-in-out, border 0.5s ease-in-out;
+  cursor: pointer;
+}
+.button:hover,
+.button:focus {
+  color: #fff;
+  text-decoration: none;
+  border-color: #17b5f0;
+  background-color: #333;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 16px;
+  position: relative;
+}
+.header .logo {
+  width: 20px;
+}
+.footer {
+  background: #2d2d2d;
+  color: #fff;
+}
