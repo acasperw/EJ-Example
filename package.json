@@ -1,7 +1,7 @@
 {
   "name": "easyjet-test",
   "version": "1.0.0",
-  "description": "Test for Easy Jet",
+  "description": "Test for easyJet",
   "main": "main.js",
   "private": true,
   "scripts": {
@@ -9,10 +9,8 @@
     "watch": "watchify -v -d -t [ reactify --es6 ] main.js -o compiled.js",
     "build": "NODE_ENV=production browserify -t [ reactify --es6 ] main.js | uglifyjs > compiled.js | lessc assets/less/styles.less assets/css/styles.css | lessc --clean-css assets/less/styles.less assets/css/styles.min.css"
   },
-  "author": "Tutorialzine",
-  "license": "MIT",
+  "author": "Alex Whitlock",
   "dependencies": {
-    "moment": "^2.10.2",
     "react": "^15.2.1",
     "react-dom": "*"
   },
