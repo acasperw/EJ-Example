@@ -7,7 +7,7 @@ var GlobalHeader = require('./GlobalHeader');
 var GlobalFooter = require('./GlobalFooter');
 
 var Search = require('./Search');
-var Map = require('./Map');
+//var Map = require('./Map');
 var CurrentLocation = require('./CurrentLocation');
 var LocationList = require('./LocationList');
 
