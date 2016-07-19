@@ -1,5 +1,6 @@
 var React = require('react');
 
+//ES5 Stateless Component
 function GlobalHeader(props) {
 
   return (

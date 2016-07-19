@@ -39,15 +39,20 @@
     clear:both;
     z-index:5;
     position:relative;
+    text-align:center;
 
     li {
-      float:left;
+      display:inline-block;
       margin-top:2px;
       
       a {
         color: #fff;
         display:block;
         padding:12px;
+      }
+
+      @media @tablet {
+      float: left;
       }
     }
 

@@ -2,16 +2,13 @@ var React = require('react');
 var classNames = require('classnames');
 
 // ES6 (statefull) Component
-
 class GlobalHeader extends React.Component {
 
   constructor() {
     super();
     this._handleClick = this._handleClick.bind(this);
     this.state = {
-      expanded: false,
-      wrapperStyleHeight: '',
-      elementHeight: ''
+      expanded: false
     };
   }
   
