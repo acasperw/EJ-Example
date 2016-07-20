@@ -14,7 +14,7 @@ body {
   background-color: #fff;
   color: #222;
   font-size: medium;
-  font-family: arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   margin: 0 auto;
   min-width: 320px;
   font-weight: 300;
@@ -32,6 +32,7 @@ h4 {
   margin: 0;
   padding: 0;
   font-family: inherit;
+  font-weight: 100;
 }
 button,
 input,
@@ -77,18 +78,30 @@ a:active {
 }
 .button {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 12px 4px;
   margin: 10px 5px 10px 0;
-  min-width: 150px;
   text-align: center;
   overflow: hidden;
   background: #FF6600;
+  text-transform: uppercase;
   color: #fff;
   position: relative;
   z-index: 2;
   border: none;
   transition: background 0.5s ease-in-out, color 0.5s ease-in-out, border 0.5s ease-in-out;
   cursor: pointer;
+}
+@media only screen and (min-width : 768px) {
+  .button {
+    padding: 12px;
+  }
+}
+.button:after {
+  content: '>';
+  margin: 0 0 0 4px;
+  display: inline-block;
+  border-left: 1px solid #fff;
+  padding-left: 7px;
 }
 .button:hover,
 .button:focus {
@@ -126,7 +139,7 @@ a:active {
 .header {
   background: #FF6600;
   color: #fff;
-  padding: 20px 0;
+  padding: 12px 0;
   overflow: hidden;
 }
 .header .container:before {
@@ -229,6 +242,67 @@ a:active {
 .flight-view {
   margin: 20px 0;
 }
+.flight-view h2 {
+  position: relative;
+  margin: 25px 0 10px;
+  overflow: hidden;
+}
+.flight-view h2 span {
+  display: inline-block;
+  position: relative;
+  padding: 0;
+}
+.flight-view h2 span:before,
+.flight-view h2 span:after {
+  content: "";
+  position: absolute;
+  height: 50%;
+  border-bottom: 1px solid #FF6600;
+  top: 0;
+  width: 1000px;
+}
+.flight-view h2 span:before {
+  right: 100%;
+  margin-right: 15px;
+}
+.flight-view h2 span:after {
+  left: 100%;
+  margin-left: 15px;
+}
+.quick-flight--info {
+  float: left;
+  width: 50%;
+  padding: 12px 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+.quick-flight--info h3 {
+  color: #FF6600;
+}
+.quick-flight--info:last-child {
+  display: none;
+}
+@media only screen and (min-width : 768px) {
+  .quick-flight--info {
+    width: 33.33%;
+  }
+  .quick-flight--info:last-child {
+    display: block;
+  }
+}
+.quick-flight--info .flight--price {
+  font-size: 1.25em;
+  font-weight: 100;
+  margin-top: 8px;
+}
+@media only screen and (min-width : 768px) {
+  .quick-flight--info .flight--price {
+    font-size: 2.25em;
+  }
+}
+.quick-flight--info .flight--departure {
+  font-size: small;
+}
 .footer {
   background: #2d2d2d;
   color: #fff;
@@ -237,6 +311,8 @@ a:active {
 }
 .footer a {
   color: #eee;
+  padding: 1px 0;
+  display: inline-block;
 }
 .footer .footerCol {
   margin: 8px 0;
@@ -258,7 +334,7 @@ a:active {
 .footer h3 {
   margin-bottom: 10px;
 }
-.wrapper {
+.main-page {
   background-repeat: no-repeat;
   background-size: cover;
   background-image: url(../i/easy-home-background.jpg);

@@ -13,6 +13,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "react": "^15.2.1",
+    "react-datetime": "^2.4.0",
     "react-dom": "*",
     "react-router": "^2.6.0"
   },

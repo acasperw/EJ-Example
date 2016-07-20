@@ -15,12 +15,7 @@ var App = React.createClass({
 
 	getInitialState(){
 		return {
-			favorites: favorites,
-			currentAddress: 'Paris, France',
-			mapCoordinates: {
-				lat: 48.856614,
-				lng: 2.3522219
-			}
+			view: "search"
 		};
 	},
 

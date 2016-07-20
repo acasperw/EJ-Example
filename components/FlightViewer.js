@@ -1,4 +1,5 @@
 var React = require('react');
+var QuickFlightInfo = require('./QuickFlightInfo');
 
 // ES6 (statefull) Component
 class FlightViewer extends React.Component {
@@ -48,17 +49,24 @@ class FlightViewer extends React.Component {
       const theFlightParse = JSON.parse(theFlightJson);
       EachFlight = theFlightParse.map(function(element, index) {
         return (
-          <li><a key={index}>{element.departureAirportCode}</a></li>
+          <li><a key={index}>{element.prices.adult.value}</a></li>
         );
       });
 
-      const cheapestFlights = theFlightParse.filter(function(value, index, ar) {
-        console.log(value);
-        console.log(index);
-        console.log(ar);
+      // Sort Price and return lowest three
+      var cheapestFlightsJson = theFlightParse.sort(function (a, b) {
+        if (a.prices.adult.value > b.prices.adult.value) {return 1}
+        if (a.prices.adult.value < b.prices.adult.value) {return -1}
+        return 0;
+      }).slice(0, 3);
+
+      // Show Cheapest Flights, for each flight
+      cheapestFlights = cheapestFlightsJson.map(function(element, index) {
+        return (
+          <QuickFlightInfo theData={element} />
+        );
       });
-
-
+      
     }
 
     if (this.state.errorMessage) {
@@ -69,7 +77,11 @@ class FlightViewer extends React.Component {
       <div className="flight-view clearfix">
         <div>{EachFlight}</div>
         <div>{theErrorMessage}</div>
-        <div>{cheapestFlights}</div>
+        <cheapestFlightsSection />
+        <div className="cheapestFlights clearfix">
+          <h2><span>Our Latest Cheapest Flights</span></h2>
+          <div>{cheapestFlights}</div>
+        </div>
       </div>
     );
   };
