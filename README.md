@@ -20,3 +20,15 @@ npm run build
 ```
 Compiles the JSX to JS 
 Compiles less to css & minified css
+
+## Detail
+Used:
+  HTML
+  Less
+    CSS / CSS3
+    BEM
+  ReactJs
+  NodeJs
+  JavaScript (pure)
+    Ajax
+  Icon font

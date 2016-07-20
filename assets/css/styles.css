@@ -1,3 +1,81 @@
+@font-face {
+  font-family: 'fontello';
+  src: url('../font/fontello.eot?66989357');
+  src: url('../font/fontello.eot?66989357#iefix') format('embedded-opentype'), url('../font/fontello.woff2?66989357') format('woff2'), url('../font/fontello.woff?66989357') format('woff'), url('../font/fontello.ttf?66989357') format('truetype'), url('../font/fontello.svg?66989357#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('../font/fontello.svg?66989357#fontello') format('svg');
+  }
+}
+*/
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+.icon-flight:before {
+  content: '\e800';
+}
+/* '' */
+.icon-spin5:before {
+  content: '\e838';
+}
+/* '' */
+.icon-angle-right:before {
+  content: '\f105';
+}
+/* '' */
+.animate-spin {
+  -moz-animation: spin 2s infinite linear;
+  -o-animation: spin 2s infinite linear;
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+  display: inline-block;
+}
+@keyframes spin {
+  0% {
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -moz-transform: rotate(359deg);
+    -o-transform: rotate(359deg);
+    -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
+  }
+}
 /* Base Colours */
 /* Global Mixins */
 /* Responsive */
@@ -95,13 +173,6 @@ a:active {
   .button {
     padding: 12px;
   }
-}
-.button:after {
-  content: '>';
-  margin: 0 0 0 4px;
-  display: inline-block;
-  border-left: 1px solid #fff;
-  padding-left: 7px;
 }
 .button:hover,
 .button:focus {
@@ -239,6 +310,51 @@ a:active {
     height: auto;
   }
 }
+.flight-search-wrapper {
+  padding: 20px;
+  background: #ff5400;
+  color: white;
+  border-radius: 3px;
+  text-align: center;
+}
+.flight-search-wrapper .button {
+  border-radius: 3px;
+  border: 1px solid #fff;
+}
+.form--panel {
+  display: inline-block;
+  margin: 0 16px;
+}
+.form--panel label {
+  display: block;
+  text-align: left;
+  margin: 0 0 5px;
+}
+.easy-input {
+  -webkit-appearance: none;
+  border: 1px solid #FF6600;
+  border-radius: 3px;
+  padding: 12px;
+}
+.easy-inputfirst-child {
+  margin-left: 0;
+}
+.flight-results {
+  transition: 0.3s all;
+  margin-top: -3px;
+  border: 1px solid #ff5400;
+  overflow: hidden;
+  border-radius: 0 0 3px 3px;
+}
+.flight-results .flight-results--inner {
+  padding: 20px;
+}
+.js .flight-results {
+  height: 0px;
+}
+.expanded .flight-results {
+  height: 200px;
+}
 .flight-view {
   margin: 20px 0;
 }
@@ -302,6 +418,64 @@ a:active {
 }
 .quick-flight--info .flight--departure {
   font-size: small;
+}
+.flights--error-message {
+  padding: 20px 0;
+  text-align: center;
+}
+.flights--error-message em {
+  position: absolute;
+  left: -200em;
+  top: 0;
+}
+.flights--error-message.message__loading {
+  font-size: 1.5em;
+}
+.detail-flight--info,
+.dark-overlay {
+  position: absolute;
+  bottom: 0;
+  top: 100%;
+  opacity: 0;
+  transition: 0.3s opacity;
+}
+.dark-overlay {
+  z-index: 100;
+}
+.detail-flight--info {
+  z-index: 150;
+  background: white;
+  padding: 20px;
+}
+.expanded .detail-flight--info,
+.expanded .dark-overlay {
+  position: fixed;
+  opacity: 1;
+}
+.expanded .detail-flight--info {
+  top: 10%;
+  left: 10%;
+  bottom: 10%;
+  right: 10%;
+  min-height: 400px;
+}
+@media only screen and (min-width : 768px) {
+  .expanded .detail-flight--info {
+    top: 20%;
+    left: 30%;
+    bottom: 20%;
+    right: 30%;
+  }
+}
+.expanded .detail-flight--info .flight-close-button {
+  float: right;
+}
+.expanded .dark-overlay {
+  background: rgba(0, 0, 0, 0.7);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 .footer {
   background: #2d2d2d;

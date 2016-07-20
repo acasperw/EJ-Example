@@ -67,3 +67,60 @@
   }
 
 }
+
+.flights--error-message {
+  .small-section();
+  text-align:center;
+
+  em {
+    position:absolute;
+    left:-200em;
+    top: 0;
+  }
+
+  &.message__loading{
+    font-size:1.5em;
+  }
+}
+
+// Detailed Flight Viewer
+.detail-flight--info, .dark-overlay {position:absolute; bottom:0; top:100%; opacity:0; transition: 0.3s opacity;}
+.dark-overlay {z-index:100;}
+.detail-flight--info {
+    z-index:150;
+    background:white;
+    padding:20px;
+
+  }
+
+.expanded{
+  .detail-flight--info, .dark-overlay {
+    position:fixed;
+    opacity:1;
+  }
+  .detail-flight--info {
+    top:10%;
+    left:10%;
+    bottom:10%;
+    right:10%;
+    min-height:400px;
+
+    @media @tablet {
+      top:20%;
+      left:30%;
+      bottom:20%;
+      right:30%;
+    }
+
+    .flight-close-button {
+      float:right;
+    }
+  }
+  .dark-overlay {
+    background:rgba(0,0,0,0.7);
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+  }
+}
