@@ -321,6 +321,11 @@ a:active {
   border-radius: 3px;
   border: 1px solid #fff;
 }
+@media only screen and (min-width : 1000px) {
+  .form-row-desktop .form-row {
+    display: inline;
+  }
+}
 .form--panel {
   display: inline-block;
   margin: 0 16px;
@@ -330,14 +335,18 @@ a:active {
   text-align: left;
   margin: 0 0 5px;
 }
-.easy-input {
+.easy-input input,
+.easy-input select {
   -webkit-appearance: none;
   border: 1px solid #FF6600;
   border-radius: 3px;
-  padding: 12px;
-}
-.easy-inputfirst-child {
-  margin-left: 0;
+  padding: 12px 30px 12px 12px;
+  margin-bottom: 10px;
+  background-position: 95% 50%;
+  background-position: calc(100% - 10px) 50%;
+  min-width: 75px;
+  background-repeat: no-repeat;
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAFBAMAAACOSmBbAAAAGFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABWNxwqAAAAB3RSTlMAlICPon4FzGWBCwAAACJJREFUCNdjUC8vLy9mYAKSYgxATiEDAwNruQADEJgwMAAAaZgFTCUnE6sAAAAASUVORK5CYII=);
 }
 .flight-results {
   transition: 0.3s all;
@@ -392,11 +401,26 @@ a:active {
   padding-left: 4px;
   padding-right: 4px;
 }
+.quick-flight--info .quick--inner {
+  border-right: 1px solid #ddd;
+  margin-right: 20px;
+}
 .quick-flight--info h3 {
   color: #FF6600;
 }
 .quick-flight--info:last-child {
   display: none;
+}
+.quick-flight--info:nth-child(2) .quick--inner {
+  border-width: 0;
+}
+@media only screen and (min-width : 768px) {
+  .quick-flight--info:nth-child(2) .quick--inner {
+    border-width: 1px;
+  }
+}
+.quick-flight--info:nth-child(3) .quick--inner {
+  border-width: 0;
 }
 @media only screen and (min-width : 768px) {
   .quick-flight--info {

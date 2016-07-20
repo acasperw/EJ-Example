@@ -23,7 +23,7 @@ class QuickFlightInfo extends React.Component {
 
     return(
       <div className={QuickFlightclasses}>
-        <div>
+        <div className="quick--inner">
           <h3>{this.props.theData.arrivalAirport}</h3>
           <div className="flight--departure">From: {this.props.theData.departureAirport}</div>
           <div className="flight--price">£{this.props.theData.prices.adult.value}</div>

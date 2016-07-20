@@ -26,9 +26,14 @@ Used:
   HTML
   Less
     CSS / CSS3
-    BEM
+    BEM formatting
   ReactJs
+    Seperated Components
+    ES5
+    ES6 
+    Es6 Stateless
   NodeJs
   JavaScript (pure)
     Ajax
   Icon font
+  Responsive (Mobile First)

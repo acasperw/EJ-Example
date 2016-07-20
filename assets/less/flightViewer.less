@@ -28,13 +28,18 @@
 }
 
 
-.quick-flight--info {
-
+.quick-flight--info {  
   float:left;
   width:50%;
   .xsmall-section();
   padding-left:4px;
   padding-right:4px;
+
+  .quick--inner {
+    border-right:1px solid #ddd;
+    margin-right:20px;
+  }
+
 
   h3 {
     color: @easy-orange;
@@ -43,6 +48,16 @@
   &:last-child{
     display:none;
   }
+
+  &:nth-child(2){
+    .quick--inner {
+      border-width:0;
+      @media @tablet {
+        border-width:1px;
+      }
+    }
+  }
+  &:nth-child(3){.quick--inner {border-width:0;}}
 
   @media @tablet {
     width:33.33%;

@@ -10,7 +10,13 @@
     border:1px solid #fff;
   }
 }
-
+.form-row-desktop {
+  @media @desktop {
+    .form-row{
+      display:inline;
+    }
+  }
+}
 .form--panel{
   display:inline-block;
   margin:0 16px;
@@ -23,15 +29,20 @@
 
 }
 .easy-input {
-  -webkit-appearance: none;
-  border:1px solid @easy-orange;
-  border-radius:3px;
-  padding:12px;
-
-  &first-child {
-    margin-left:0;
+  input, select {
+    -webkit-appearance: none;
+    border:1px solid @easy-orange;
+    border-radius:3px;
+    padding:12px 30px 12px 12px;
+    margin-bottom:10px;
+    background-position:95% 50%;
+    background-position:calc(~"100% - 10px") 50%; 
+    min-width:75px;
+    background-repeat:no-repeat;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAFBAMAAACOSmBbAAAAGFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABWNxwqAAAAB3RSTlMAlICPon4FzGWBCwAAACJJREFUCNdjUC8vLy9mYAKSYgxATiEDAwNruQADEJgwMAAAaZgFTCUnE6sAAAAASUVORK5CYII=);
   }
 }
+
 
 .flight-results {
   transition:0.3s all;
@@ -50,3 +61,4 @@
 .expanded .flight-results {
   height:200px;
 }
+
