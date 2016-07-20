@@ -22,18 +22,14 @@ Compiles the JSX to JS
 Compiles less to css & minified css
 
 ## Detail
-Used:
-  HTML
-  Less
-    CSS / CSS3
-    BEM formatting
-  ReactJs
-    Seperated Components
-    ES5
-    ES6 
-    Es6 Stateless
-  NodeJs
-  JavaScript (pure)
-    Ajax
-  Icon font
-  Responsive (Mobile First)
+
+ Used: 
+ - HTML 
+ - Less 
+	 - CSS / CSS3
+	 - BEM formatting
+ - ReactJs
+ - Components (ES5 ES6  Es6 Stateless)
+ - Ajax 
+ - Icon font 
+ - Responsive (Mobile First)
