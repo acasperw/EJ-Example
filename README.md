@@ -29,18 +29,20 @@ Compiles less to css & minified css
 ## Further Detail
 
  Used: 
- - HTML 
- - Less 
-	 - CSS / CSS3
-	 - BEM formatting
- - ReactJs
- - Components (ES5 ES6  Es6 Stateless)
- - Ajax 
- - Icon font 
- - Responsive (Mobile First)
+- HTML 
+- Less 
+	- CSS / CSS3
+	- BEM formatting
+- ReactJs
+- Components (ES5 ES6  Es6 Stateless)
+- Ajax 
+- Icon font 
+- Responsive (Mobile First)
 - Git
 
 ## Notes
-SEO Friendly 
-No JS or CSS library used to reduce page weight
+SEO Friendly.
+
+No JS or CSS library used to reduce page weight.
+
 Some non JS accessibility taken into consideration.
