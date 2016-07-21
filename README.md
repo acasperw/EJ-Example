@@ -5,6 +5,11 @@ easyJet test webapp
 ```sh
 1) Open Terminal and navigate to folder
 2) $ npm install
+3) Open index.html in browser
+```
+
+To see react > minified.js run: 
+```sh
 3) $ npm run build
 ```
 
@@ -21,7 +26,7 @@ npm run build
 Compiles the JSX to JS 
 Compiles less to css & minified css
 
-## Detail
+## Further Detail
 
  Used: 
  - HTML 
@@ -33,3 +38,9 @@ Compiles less to css & minified css
  - Ajax 
  - Icon font 
  - Responsive (Mobile First)
+- Git
+
+## Notes
+SEO Friendly 
+No JS or CSS library used to reduce page weight
+Some non JS accessibility taken into consideration.
