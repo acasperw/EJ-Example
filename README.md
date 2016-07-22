@@ -4,13 +4,13 @@ easyJet test webapp
 ## Instructions
 ```sh
 1) Open Terminal and navigate to folder
-2) $ npm install
-3) Open index.html in browser
+2) Open index.html in browser
 ```
 
 To see react > minified.js run: 
 ```sh
-3) $ npm run build
+1) $ npm install
+2) $ npm run build
 ```
 
 ## Detail
