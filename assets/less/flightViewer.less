@@ -2,9 +2,36 @@
   margin:20px 0;
 }
 
-.quick-flight--info {  
+.quick-flight--info {
   float:left;
   width:50%;
+
+  &.issearch--result{
+    float:none;
+    width:100%;
+    transition:0.3s all;
+
+    &:hover{
+      background:#ddd;
+    }
+
+    .quick--inner {
+      border:none;
+      border-bottom:1px solid #ddd;
+      text-align:center;
+
+      @media @tablet {
+        text-align:left;
+        display:flex;
+        justify-content: space-between;
+      }
+
+      .quick--inner--section{
+        margin-bottom:8px;
+      }
+    }
+  }
+      
   .xsmall-section();
   padding-left:4px;
   padding-right:4px;
@@ -79,7 +106,41 @@
     z-index:150;
     background:white;
     padding:20px;
+    text-align:center;
 
+    h3{
+      margin-top:20px;
+    }
+
+    .detail-left {
+       @media @desktop {
+         float:left;
+         width:50%;
+         text-align:center;
+      }
+    }
+    .detail-right {
+       @media @desktop {
+         float:right;
+         width:50%;
+         text-align:center;
+      }
+    }
+
+    .button {
+      position:absolute;
+      bottom:10px;
+      right:20px;
+
+      &.flight-close-button{
+        right:auto;
+        left:20px;
+      }
+    }
+
+    .flight--price {
+      margin:20px 0;
+    }
   }
 
 .expanded{

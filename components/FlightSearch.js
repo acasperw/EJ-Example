@@ -11,8 +11,16 @@ class FlightSearch extends React.Component {
     super();
     this._onSubmit = this._onSubmit.bind(this);
     this.state = {
-      expanded: false,
-      submitText: "Lets Go"
+      searchExpanded: false,
+      submitText: "Lets Go",
+      FlightSearchData: {
+        flightDepart: null,
+        flightArriv: null,
+        adults: null,
+        kids: null,
+        flightDateOut: null,
+        flightDateReturn: null
+      }
     };
   }
 
@@ -21,7 +29,7 @@ class FlightSearch extends React.Component {
     const QuickFlightclasses = classNames(
       'flight-search',
       'clearfix',
-      {'expanded': this.state.expanded}
+      {'search--expanded': this.state.searchExpanded}
     );
     
     const theFlightParse = this.props.theData;
@@ -38,7 +46,7 @@ class FlightSearch extends React.Component {
       }
       return uniquesData;
     }
-    // Filters duplcates from arrives and departure airports
+    // Filters duplcates from arrives and departure airports - setup search form
     const flightDeparts = removeDups(theFlightParse, 'departureAirport').map(function(element, index) {
       return (
         <option key={index} value={element.departureAirportCode}>{element.departureAirport}</option>
@@ -50,26 +58,38 @@ class FlightSearch extends React.Component {
       );
     });
 
-    var flightResults = "test";
+    var flightResults = null, stateFlightData = this.state.FlightSearchData, fDs, fDd, flightResultsTemp, numPassengers;
+    // Filter and Match Search Results
+    if (stateFlightData.flightDepart) {
 
-    function filterByProperty(array, prop, value){
-      var filtered = [];
-      for(var i = 0; i < array.length; i++){
-        var obj = array[i];
-        for(var key in obj){
-          if(typeof(obj[key] == "object")){
-            var item = obj[key];
-            if(item[prop] == value){
-              filtered.push(item);
-            }
-          }
+      // Iterate through available data
+      flightResultsTemp = theFlightParse.filter(function(element, index) {
+        console.log(element);
+
+        fDs = new Date(stateFlightData.flightDateOut); fDs = fDs.toLocaleDateString();
+        fDd = new Date(element.localDepartureTime); fDd = fDd.toLocaleDateString();
+
+        numPassengers = (parseInt(stateFlightData.adults) + parseInt(stateFlightData.kids));
+
+        //If matches
+        if (fDs === fDd && numPassengers <= element.seatsAvailable){
+          return true;
+        } else {
+          return false;
         }
-      }
-      return filtered;
+      });
+
+      flightResults = flightResultsTemp.map(function(element, index) {
+        return (<QuickFlightInfo theData={element} isSearchResult={true} />);
+      });
+
     }
-    //var byName = filterByProperty(theFlightParse, "departureAirport", "London Luton (LTN)");
-    //console.log(byName);
-         
+    if(flightResults){
+      if(flightResults.length == 0){
+        flightResults = <div className="flights--error-message ">No Results Found :(</div>;
+      }
+    }
+    
 
     return(
       <div className={QuickFlightclasses}>
@@ -79,26 +99,22 @@ class FlightSearch extends React.Component {
             <div className="form-row-desktop clearfix">
               <div className="form-row">
                 <div className="form--panel">
-                  <label for="flightDest">Going From:</label>
-                  <span className="easy-input"><select id="flightDest" ref="flightDest"><option required value="" disabled selected>Select a Departure Airport</option>{flightDeparts}</select></span>
+                  <label for="flightDepart">Going From:</label>
+                  <span className="easy-input"><select id="flightDepart" ref="flightDepart" required><option value="" disabled selected>Select a Departure Airport</option>{flightDeparts}</select></span>
                 </div>
                 <div className="form--panel">
                   <label for="flightArriv">Going To:</label>
-                  <span className="easy-input"><select id="flightArriv" ref="flightArriv"><option required value="" disabled selected>Select a Destination</option>{flightArrival}</select></span>
+                  <span className="easy-input"><select id="flightArriv" ref="flightArriv" required><option value="" disabled selected>Select a Destination</option>{flightArrival}</select></span>
                 </div>
               </div>
               <div className="form-row">
                 <div className="form--panel">
                   <label for="adults">Adults (16+):</label>
-                  <span className="easy-input"><input type="number" ref="adults" name="adults" required min="1" max="10" pattern="[0-9]*" /></span>
+                  <span className="easy-input"><input type="number" ref="adults" name="adults" required min="1" max="10" defaultValue="2" pattern="[0-9]*" /></span>
                 </div>
                 <div className="form--panel">
-                  <label for="kids">Kids (2-14):</label>
-                  <span className="easy-input"><input type="number" ref="kids" name="kids" min="0" max="10" pattern="[0-9]*" /></span>
-                </div>
-                <div className="form--panel">
-                  <label for="infants">Infants:</label>
-                  <span className="easy-input"><input type="number" ref="infants" name="infants" min="0" max="10"  pattern="[0-9]*"/></span>
+                  <label for="kids">Kids:</label>
+                  <span className="easy-input"><input type="number" ref="kids" name="kids" min="0" max="10" defaultValue="0" /></span>
                 </div>
               </div>
             </div>
@@ -106,11 +122,11 @@ class FlightSearch extends React.Component {
               <div className="form-row">
                  <div className="form--panel">
                   <label for="flightDateOut">When are you flying out:</label>
-                  <span className="easy-input"><input type="date" name="flightDateOut" min="2016-06-30" value="2016-06-30" required /></span>
+                  <span className="easy-input"><input type="date" ref="flightDateOut" name="flightDateOut" min="2016-06-29" defaultValue="2016-06-30" required /></span>
                 </div>
                  <div className="form--panel">
                   <label for="flightDateReturn">When are you flying out:</label>
-                  <span className="easy-input"><input type="date" name="flightDateReturn" min="2016-07-01" /></span>
+                  <span className="easy-input"><input type="date" ref="flightDateReturn" name="flightDateReturn" min="2016-07-01" /></span>
                 </div>
               </div>
               <div className="form--panel"><input type="submit" className="button" value={this.state.submitText} /></div>
@@ -131,9 +147,20 @@ class FlightSearch extends React.Component {
   _onSubmit(e){
      e.preventDefault();
       const obj = this;
-      obj.setState({expanded: true, submitText: "Refine"});
+      obj.setState({
+        searchExpanded: true, 
+        submitText: "Refine",
+        FlightSearchData: {
+          flightDepart: this.refs.flightDepart.value,
+          flightArriv: null,
+          adults: this.refs.adults.value,
+          kids: this.refs.kids.value,
+          flightDateOut: this.refs.flightDateOut.value,
+          flightDateReturn: null
+        }
+    });
 
-      console.log( this.refs.flightArriv.value );
+      //console.log( this.refs.flightArriv.value );
   }
 
 };

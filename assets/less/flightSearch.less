@@ -4,6 +4,9 @@
   color:white;
   border-radius:3px;
   text-align:center;
+  @media @desktop {
+    text-align:left;
+  }
 
   .button {
     border-radius:3px;
@@ -18,8 +21,11 @@
   }
 }
 .form--panel{
-  display:inline-block;
   margin:0 16px;
+
+  @media @tablet {
+      display:inline-block;
+  }
 
   label {
     display:block;
@@ -34,9 +40,14 @@
     border:1px solid @easy-orange;
     border-radius:3px;
     padding:12px;
-    margin-bottom:10px;
+    margin-bottom:16px;
     min-width:75px;
     text-align:center;
+    width:100%;
+    @media @tablet {
+      display:inline-block;
+      width:auto;
+    }
   }
   select{
     background-position:95% 50%;
@@ -45,13 +56,18 @@
     padding-right:30px;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAFBAMAAACOSmBbAAAAGFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABWNxwqAAAAB3RSTlMAlICPon4FzGWBCwAAACJJREFUCNdjUC8vLy9mYAKSYgxATiEDAwNruQADEJgwMAAAaZgFTCUnE6sAAAAASUVORK5CYII=);
   }
+  @media @desktop {
+    input[type="date"], select{
+      min-width:300px;
+    }
+  }
 }
 
 
 .flight-results {
   transition:0.3s all;
   margin-top:-3px;
-  border:1px solid @dark-easy-orange;
+  border:1px solid @easy-orange;
   overflow:hidden;
   border-radius:0 0 3px 3px;
 
@@ -60,9 +76,9 @@
   }
 }
 .js .flight-results {
-  height:0px;
+  max-height:0px;
 }
-.expanded .flight-results {
-  height:200px;
+.search--expanded .flight-results {
+  max-height:1000px;
 }
 

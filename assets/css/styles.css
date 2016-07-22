@@ -169,7 +169,7 @@ a:active {
   transition: background 0.5s ease-in-out, color 0.5s ease-in-out, border 0.5s ease-in-out;
   cursor: pointer;
 }
-@media only screen and (min-width : 768px) {
+@media only screen and (min-width : 700px) {
   .button {
     padding: 12px;
   }
@@ -285,12 +285,12 @@ h2 span:after,
   display: block;
   padding: 12px;
 }
-@media only screen and (min-width : 768px) {
+@media only screen and (min-width : 700px) {
   .header .header--menu li {
     float: left;
   }
 }
-@media only screen and (min-width : 768px) {
+@media only screen and (min-width : 700px) {
   .header .header--menu {
     float: right;
     clear: none;
@@ -320,7 +320,7 @@ h2 span:after,
   box-shadow: 0 6px transparent, 0 12px #fff, 0 18px transparent, 0 24px #fff;
   content: '';
 }
-@media only screen and (min-width : 768px) {
+@media only screen and (min-width : 700px) {
   .header .menu-trigger {
     display: none;
   }
@@ -330,7 +330,7 @@ h2 span:after,
   height: 0;
   overflow: hidden;
 }
-@media only screen and (min-width : 768px) {
+@media only screen and (min-width : 700px) {
   .js .header .header--menu {
     height: auto;
   }
@@ -338,7 +338,7 @@ h2 span:after,
 .js .header.expanded .header--menu {
   height: 44px;
 }
-@media only screen and (min-width : 768px) {
+@media only screen and (min-width : 700px) {
   .js .header.expanded .header--menu {
     height: auto;
   }
@@ -350,6 +350,11 @@ h2 span:after,
   border-radius: 3px;
   text-align: center;
 }
+@media only screen and (min-width : 1000px) {
+  .flight-search-wrapper {
+    text-align: left;
+  }
+}
 .flight-search-wrapper .button {
   border-radius: 3px;
   border: 1px solid #fff;
@@ -360,8 +365,12 @@ h2 span:after,
   }
 }
 .form--panel {
-  display: inline-block;
   margin: 0 16px;
+}
+@media only screen and (min-width : 700px) {
+  .form--panel {
+    display: inline-block;
+  }
 }
 .form--panel label {
   display: block;
@@ -374,9 +383,17 @@ h2 span:after,
   border: 1px solid #FF6600;
   border-radius: 3px;
   padding: 12px;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
   min-width: 75px;
   text-align: center;
+  width: 100%;
+}
+@media only screen and (min-width : 700px) {
+  .easy-input input,
+  .easy-input select {
+    display: inline-block;
+    width: auto;
+  }
 }
 .easy-input select {
   background-position: 95% 50%;
@@ -385,10 +402,16 @@ h2 span:after,
   padding-right: 30px;
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAFBAMAAACOSmBbAAAAGFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABWNxwqAAAAB3RSTlMAlICPon4FzGWBCwAAACJJREFUCNdjUC8vLy9mYAKSYgxATiEDAwNruQADEJgwMAAAaZgFTCUnE6sAAAAASUVORK5CYII=);
 }
+@media only screen and (min-width : 1000px) {
+  .easy-input input[type="date"],
+  .easy-input select {
+    min-width: 300px;
+  }
+}
 .flight-results {
   transition: 0.3s all;
   margin-top: -3px;
-  border: 1px solid #ff5400;
+  border: 1px solid #FF6600;
   overflow: hidden;
   border-radius: 0 0 3px 3px;
 }
@@ -396,10 +419,10 @@ h2 span:after,
   padding: 20px;
 }
 .js .flight-results {
-  height: 0px;
+  max-height: 0px;
 }
-.expanded .flight-results {
-  height: 200px;
+.search--expanded .flight-results {
+  max-height: 1000px;
 }
 .flight-view {
   margin: 20px 0;
@@ -410,6 +433,29 @@ h2 span:after,
   padding: 12px 0;
   padding-left: 4px;
   padding-right: 4px;
+}
+.quick-flight--info.issearch--result {
+  float: none;
+  width: 100%;
+  transition: 0.3s all;
+}
+.quick-flight--info.issearch--result:hover {
+  background: #ddd;
+}
+.quick-flight--info.issearch--result .quick--inner {
+  border: none;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+@media only screen and (min-width : 700px) {
+  .quick-flight--info.issearch--result .quick--inner {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.quick-flight--info.issearch--result .quick--inner .quick--inner--section {
+  margin-bottom: 8px;
 }
 .quick-flight--info .quick--inner {
   border-right: 1px solid #ddd;
@@ -424,7 +470,7 @@ h2 span:after,
 .quick-flight--info:nth-child(2) .quick--inner {
   border-width: 0;
 }
-@media only screen and (min-width : 768px) {
+@media only screen and (min-width : 700px) {
   .quick-flight--info:nth-child(2) .quick--inner {
     border-width: 1px;
   }
@@ -432,7 +478,7 @@ h2 span:after,
 .quick-flight--info:nth-child(3) .quick--inner {
   border-width: 0;
 }
-@media only screen and (min-width : 768px) {
+@media only screen and (min-width : 700px) {
   .quick-flight--info {
     width: 33.33%;
   }
@@ -445,7 +491,7 @@ h2 span:after,
   font-weight: 100;
   margin-top: 8px;
 }
-@media only screen and (min-width : 768px) {
+@media only screen and (min-width : 700px) {
   .quick-flight--info .flight--price {
     font-size: 2.25em;
   }
@@ -480,6 +526,36 @@ h2 span:after,
   z-index: 150;
   background: white;
   padding: 20px;
+  text-align: center;
+}
+.detail-flight--info h3 {
+  margin-top: 20px;
+}
+@media only screen and (min-width : 1000px) {
+  .detail-flight--info .detail-left {
+    float: left;
+    width: 50%;
+    text-align: center;
+  }
+}
+@media only screen and (min-width : 1000px) {
+  .detail-flight--info .detail-right {
+    float: right;
+    width: 50%;
+    text-align: center;
+  }
+}
+.detail-flight--info .button {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+}
+.detail-flight--info .button.flight-close-button {
+  right: auto;
+  left: 20px;
+}
+.detail-flight--info .flight--price {
+  margin: 20px 0;
 }
 .expanded .detail-flight--info,
 .expanded .dark-overlay {
@@ -493,7 +569,7 @@ h2 span:after,
   right: 10%;
   min-height: 400px;
 }
-@media only screen and (min-width : 768px) {
+@media only screen and (min-width : 700px) {
   .expanded .detail-flight--info {
     top: 20%;
     left: 30%;
@@ -531,7 +607,7 @@ h2 span:after,
 .footer .footerCol:nth-child(2n + 1) {
   clear: left;
 }
-@media only screen and (min-width : 768px) {
+@media only screen and (min-width : 700px) {
   .footer .footerCol {
     width: 25%;
   }
