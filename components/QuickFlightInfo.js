@@ -39,8 +39,8 @@ class QuickFlightInfo extends React.Component {
               <div className="flight--departure">From: {this.props.theData.departureAirport}</div>
             </div>
             <div className="quick--inner--section">
-              <div className="flight--departure-time">Departing: {fDfull}</div>
-              <div className="flight--arrival-time">Arriving: {fAfull}</div>
+              <div className="flight--departure-time icon icon-flight">Departing: {fDfull}</div>
+              <div className="flight--arrival-time icon icon-flight">Arriving: {fAfull}</div>
             </div>
             <div className="quick--inner--section">
               <a className="button" onClick={this._handleClick}>See Flight<span className="icon icon-angle-right"></span></a>

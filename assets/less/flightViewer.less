@@ -165,6 +165,10 @@
     .flight-close-button {
       float:right;
     }
+
+    .flight--departure-time,.flight--arrival-time {
+      margin-top:20px;
+    }
   }
   .dark-overlay {
     background:rgba(0,0,0,0.7);
@@ -172,5 +176,11 @@
     bottom:0;
     left:0;
     right:0;
+  }
+}
+
+.flight--arrival-time {
+  &.icon:before {
+    transform: rotate(80deg);
   }
 }

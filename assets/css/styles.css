@@ -580,12 +580,19 @@ h2 span:after,
 .expanded .detail-flight--info .flight-close-button {
   float: right;
 }
+.expanded .detail-flight--info .flight--departure-time,
+.expanded .detail-flight--info .flight--arrival-time {
+  margin-top: 20px;
+}
 .expanded .dark-overlay {
   background: rgba(0, 0, 0, 0.7);
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+}
+.flight--arrival-time.icon:before {
+  transform: rotate(80deg);
 }
 .footer {
   background: #2d2d2d;

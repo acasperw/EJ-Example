@@ -37,8 +37,8 @@ class DetailFlightInfo extends React.Component {
         <h2><span>{this.props.data.arrivalAirport}</span></h2>
         <div className="flight--departure">From: {this.props.data.departureAirport} ({this.props.data.depTerminalName})</div>
         <div className="clearfix">
-          <div className="detail-left"><div className="flight--departure-time">Departing: {fDfull}</div></div>
-          <div className="detail-right"><div className="flight--arrival-time">Arriving: {fAfull}</div></div>
+          <div className="detail-left"><div className="flight--departure-time icon icon-flight">Departing: {fDfull}</div></div>
+          <div className="detail-right"><div className="flight--arrival-time icon icon-flight">Arriving: {fAfull}</div></div>
         </div>
         <div className="flight--price">From: £{this.props.data.prices.adult.value}</div>
         <div className="clearfix">
