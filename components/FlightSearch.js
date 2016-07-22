@@ -64,11 +64,12 @@ class FlightSearch extends React.Component {
 
       // Iterate through available data
       flightResultsTemp = theFlightParse.filter(function(element, index) {
-        console.log(element);
 
+        // setup date time
         fDs = new Date(stateFlightData.flightDateOut); fDs = fDs.toLocaleDateString();
         fDd = new Date(element.localDepartureTime); fDd = fDd.toLocaleDateString();
 
+        // calc total number of passengers
         numPassengers = (parseInt(stateFlightData.adults) + parseInt(stateFlightData.kids));
 
         //If matches
@@ -125,7 +126,7 @@ class FlightSearch extends React.Component {
                   <span className="easy-input"><input type="date" ref="flightDateOut" name="flightDateOut" min="2016-06-29" defaultValue="2016-06-30" required /></span>
                 </div>
                  <div className="form--panel">
-                  <label for="flightDateReturn">When are you flying out:</label>
+                  <label for="flightDateReturn">When are you flying back:</label>
                   <span className="easy-input"><input type="date" ref="flightDateReturn" name="flightDateReturn" min="2016-07-01" /></span>
                 </div>
               </div>
