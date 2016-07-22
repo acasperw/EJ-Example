@@ -43,6 +43,6 @@ Compiles less to css & minified css
 ## Notes
 SEO Friendly.
 
-No JS or CSS library used to reduce page weight.
+No JS (other then React) or CSS library used to reduce page weight.
 
 Some non JS accessibility taken into consideration.
