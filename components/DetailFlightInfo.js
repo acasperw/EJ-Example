@@ -1,15 +1,14 @@
-var React = require('react');
-var classNames = require('classnames');
-require('react-datetime');
+let React = require("react");
+const classNames = require("classnames");
+require("react-datetime");
 
 // ES6
 class DetailFlightInfo extends React.Component {
 
   render() {
-
-    function makeTime(time){if(time==0){return "00";} else {return time;}}
-    var fD = new Date(this.props.data.localDepartureTime); var fDfull = <span><b>{makeTime(fD.getHours())+":"+makeTime(fD.getMinutes())}</b> {fD.getDate()+"/"+(fD.getMonth()+1)+"/"}<small>{fD.getFullYear()}</small></span>
-    var fA = new Date(this.props.data.localArrivalTime); var fAfull = <span><b>{makeTime(fA.getHours())+":"+makeTime(fA.getMinutes())}</b> {fA.getDate()+"/"+(fA.getMonth()+1)+"/"}<small>{fA.getFullYear()}</small></span>
+    function makeTime(time) { if (time == 0) { return "00"; } else { return time; } }
+    const fD = new Date(this.props.data.localDepartureTime); let fDfull = <span><b>{makeTime(fD.getHours()) + ":" + makeTime(fD.getMinutes())}</b> {fD.getDate() + "/" + (fD.getMonth() + 1) + "/"}<small>{fD.getFullYear()}</small></span>;
+    const fA = new Date(this.props.data.localArrivalTime); let fAfull = <span><b>{makeTime(fA.getHours()) + ":" + makeTime(fA.getMinutes())}</b> {fA.getDate() + "/" + (fA.getMonth() + 1) + "/"}<small>{fA.getFullYear()}</small></span>;
 
 
     // ID = this.props.data.id
@@ -17,7 +16,7 @@ class DetailFlightInfo extends React.Component {
     // arrivalAirport = this.props.data.arrivalAirport
     // arrivalAirportCode = this.props.data.arrivalAirportCode
     // depTerminalName = this.props.data.depTerminalName
-    
+
     // departureAirport = this.props.data.departureAirport
     // departureAirportCode = this.props.data.departureAirportCode
 
@@ -27,12 +26,12 @@ class DetailFlightInfo extends React.Component {
 
     // localArrivalTime = this.props.data.localArrivalTime
     // localDepartureTime = this.props.data.localDepartureTime
-    
+
     // Adult Price = this.props.data.prices.adult.valueWithDebitCard
     // Child Price = this.props.data.prices.child.valueWithDebitCard
     // seatsAvailable = this.props.data.seatsAvailable
 
-    return(
+    return (
       <div className="detail-flight--info">
         <h2><span>{this.props.data.arrivalAirport}</span></h2>
         <div className="flight--departure">From: {this.props.data.departureAirport} ({this.props.data.depTerminalName})</div>
@@ -52,6 +51,6 @@ class DetailFlightInfo extends React.Component {
       </div>
     );
   }
-};
+}
 
 module.exports = DetailFlightInfo;

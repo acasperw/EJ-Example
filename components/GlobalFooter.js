@@ -1,8 +1,7 @@
-var React = require('react');
+let React = require("react");
 
-//ES5 Stateless Component
+// ES5 Stateless Component
 function GlobalHeader(props) {
-
   return (
     <div className="footer">
       <div className="container clearfix">
@@ -56,7 +55,6 @@ function GlobalHeader(props) {
       </div>
   </div>
   );
-
 }
 
 module.exports = GlobalHeader;

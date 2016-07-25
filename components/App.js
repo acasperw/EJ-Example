@@ -1,26 +1,26 @@
-var React = require('react');
+let React = require("react");
 
-var GlobalHeader = require('./GlobalHeader');
-var FlightViewer = require('./FlightViewer');
-var GlobalFooter = require('./GlobalFooter');
+let GlobalHeader = require("./GlobalHeader");
+let FlightViewer = require("./FlightViewer");
+let GlobalFooter = require("./GlobalFooter");
 
 /* Data - This could be CMS Driven, CMS renders JSON data per page. */
-var headerData = [
-	{text: "English", link: "/en/"},
-  {text: "Sign In", link: "/sign-in/"},
-  {text: "Help", link: "/help/"}
+let headerData = [
+	{ text: "English", link: "/en/" },
+  { text: "Sign In", link: "/sign-in/" },
+  { text: "Help", link: "/help/" },
 ];
 
-var App = React.createClass({
+class App extends React.Component {
 
-	getInitialState(){
+	getInitialState() {
 		return {
-			view: "search"
+			view: "search",
 		};
-	},
+	}
 
-	render(){
-		// Global Main Renderer
+	render() {
+	// Global Main Renderer
 		return (
 			<div>
 				<GlobalHeader data={headerData} />
@@ -33,16 +33,6 @@ var App = React.createClass({
 			</div>
 		);
 	}
-});
+};
 
 module.exports = App;
-
-/*
-<Search onSearch={this.searchForAddress} />
-<Map lat={this.state.mapCoordinates.lat} lng={this.state.mapCoordinates.lng} />
-<CurrentLocation address={this.state.currentAddress} 
-favorite={this.isAddressInFavorites(this.state.currentAddress)} 
-onFavoriteToggle={this.toggleFavorite} />
-<LocationList locations={this.state.favorites} activeLocationAddress={this.state.currentAddress} 
-onClick={this.searchForAddress} />
-*/

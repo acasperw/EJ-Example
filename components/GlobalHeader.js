@@ -1,5 +1,7 @@
-var React = require('react');
-var classNames = require('classnames');
+import React from "react";
+import ReactDOM from "react-dom";
+import classNames from "classNames";
+import TestUtils from "react-addons-test-utils";
 
 // ES6 (statefull) Component
 class GlobalHeader extends React.Component {
@@ -8,31 +10,30 @@ class GlobalHeader extends React.Component {
     super();
     this._handleClick = this._handleClick.bind(this);
     this.state = {
-      expanded: false
+      expanded: false,
     };
   }
-  
+
   _handleClick() {
     const obj = this;
     obj.state.expanded === true ? (
-      obj.setState({expanded: false})
+      obj.setState({ expanded: false })
     ) : (
-      obj.setState({expanded: true})
+      obj.setState({ expanded: true })
     );
   }
-  
-  render() {
 
-    //Render Each Link
-    const headerMenu = this.props.data.map(function(element, index) {
+  render() {
+    // Render Each Link
+    const headerMenu = this.props.data.map(function (element, index) {
       return (
         <li><a href={element.link} key={index}>{element.text}</a></li>
       );
     });
 
     const classes = classNames(
-      'header',
-      {'expanded': this.state.expanded}
+      "header",
+      { "expanded": this.state.expanded }
     );
 
     return (
@@ -45,8 +46,8 @@ class GlobalHeader extends React.Component {
         </div>
       </div>
     );
-  };
+  }
 
-};
+}
 
 module.exports = GlobalHeader;
