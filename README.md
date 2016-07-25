@@ -41,6 +41,9 @@ Compiles less to css & minified css
 - Git
 
 ## Notes
+
+TTFB seems really slow on http://ejtestbed.herokuapp.com/flights, causing slow first load. Cached from then on
+
 SEO Friendly.
 
 No JS (other then React) or CSS library used to reduce page weight.
