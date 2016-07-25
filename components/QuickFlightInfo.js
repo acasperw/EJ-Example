@@ -25,8 +25,8 @@ class QuickFlightInfo extends React.Component {
     if(this.props.isSearchResult){
 
         function makeTime(time){if(time==0){return "00";} else {return time;}}
-        var fD = new Date(this.props.theData.localDepartureTime); var fDfull = <span><b>{makeTime(fD.getHours())+":"+makeTime(fD.getMinutes())}</b> {fD.getDate()+"/"+fD.getMonth()+"/"}<small>{fD.getFullYear()}</small></span>
-        var fA = new Date(this.props.theData.localArrivalTime); var fAfull = <span><b>{makeTime(fA.getHours())+":"+makeTime(fA.getMinutes())}</b> {fA.getDate()+"/"+fA.getMonth()+"/"}<small>{fA.getFullYear()}</small></span>
+        var fD = new Date(this.props.theData.localDepartureTime); var fDfull = <span><b>{makeTime(fD.getHours())+":"+makeTime(fD.getMinutes())}</b> {fD.getDate()+"/"+(fD.getMonth()+1)+"/"}<small>{fD.getFullYear()}</small></span>
+        var fA = new Date(this.props.theData.localArrivalTime); var fAfull = <span><b>{makeTime(fA.getHours())+":"+makeTime(fA.getMinutes())}</b> {fA.getDate()+"/"+(fA.getMonth()+1)+"/"}<small>{fA.getFullYear()}</small></span>
 
       return(
         <div className={QuickFlightclasses}>
