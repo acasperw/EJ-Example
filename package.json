@@ -13,6 +13,7 @@
   "author": "Alex Whitlock",
   "dependencies": {
     "classnames": "^2.2.5",
+    "moment": "^2.14.1",
     "react": "^15.2.1",
     "react-datetime": "^2.4.0",
     "react-dom": "*",

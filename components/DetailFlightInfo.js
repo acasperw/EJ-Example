@@ -1,6 +1,5 @@
 let React = require("react");
 const classNames = require("classnames");
-require("react-datetime");
 
 // ES6
 class DetailFlightInfo extends React.Component {
