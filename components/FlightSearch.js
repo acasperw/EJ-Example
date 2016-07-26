@@ -19,8 +19,8 @@ class FlightSearch extends React.Component {
         adults: null,
         kids: null,
         flightDateOut: null,
-        flightDateReturn: null,
-      },
+        flightDateReturn: null
+      }
     };
   }
 
@@ -153,8 +153,8 @@ class FlightSearch extends React.Component {
         adults: this.refs.adults.value,
         kids: this.refs.kids.value,
         flightDateOut: this.refs.flightDateOut.value,
-        flightDateReturn: null,
-      },
+        flightDateReturn: null
+      }
     });
 
       // console.log( this.refs.flightArriv.value );

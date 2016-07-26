@@ -8,14 +8,14 @@ let GlobalFooter = require("./GlobalFooter");
 let headerData = [
 	{ text: "English", link: "/en/" },
   { text: "Sign In", link: "/sign-in/" },
-  { text: "Help", link: "/help/" },
+  { text: "Help", link: "/help/" }
 ];
 
 class App extends React.Component {
 
 	getInitialState() {
 		return {
-			view: "search",
+			view: "search"
 		};
 	}
 
@@ -33,6 +33,6 @@ class App extends React.Component {
 			</div>
 		);
 	}
-};
+}
 
 module.exports = App;

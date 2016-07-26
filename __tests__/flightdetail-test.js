@@ -7,10 +7,7 @@ import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 import DetailFlightInfo from '../components/DetailFlightInfo';
 
-
-describe('DetailFlightInfo', () => {
-
-  let theData = {
+let theData = {
     "id": "testId",
     "localDepartureTime": "2016-06-30T06:40:00",
     "localArrivalTime": "2016-06-30T09:35:00",
@@ -35,6 +32,9 @@ describe('DetailFlightInfo', () => {
   );
 
   const theNode = ReactDOM.findDOMNode(output); 
+
+
+describe('DetailFlightInfo', () => {
 
   it('Has the correct book & close text', () => {
     var textNode = [].slice.call(theNode.querySelectorAll('.button')).map(h => h.textContent);

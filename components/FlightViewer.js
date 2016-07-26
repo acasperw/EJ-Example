@@ -29,7 +29,7 @@ class FlightViewer extends React.Component {
     this.state = {
       flightData: null,
       errorMessage: null,
-      loading: true,
+      loading: true
     };
   }
 
@@ -44,18 +44,18 @@ class FlightViewer extends React.Component {
         // Success!
         obj.setState({
           flightData: this.response,
-          loading: false,
+          loading: false
         });
       } else {
         // We reached our target server, but it returned an error
         obj.setState({
-          errorMessage: "Error getting data",
+          errorMessage: "Error getting data"
         });
       }
     };
     request.onerror = function () {
       obj.setState({
-        errorMessage: "Error connecting to Server",
+        errorMessage: "Error connecting to Server"
       });
     };
     request.send();

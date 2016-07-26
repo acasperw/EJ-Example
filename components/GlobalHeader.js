@@ -9,7 +9,7 @@ class GlobalHeader extends React.Component {
     super();
     this._handleClick = this._handleClick.bind(this);
     this.state = {
-      expanded: false,
+      expanded: false
     };
   }
 

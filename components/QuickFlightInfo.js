@@ -9,10 +9,13 @@ class QuickFlightInfo extends React.Component {
   constructor() {
     super();
     this._handleClick = this._handleClick.bind(this);
+    this.makeTime = this.makeTime.bind(this);
     this.state = {
-      expanded: false,
+      expanded: false
     };
   }
+
+  makeTime(time) { if (time == 0) { return "00"; } else { return time; } }
 
   render() {
     const QuickFlightclasses = classNames(
@@ -22,9 +25,8 @@ class QuickFlightInfo extends React.Component {
     );
 
     if (this.props.isSearchResult) {
-      function makeTime(time) { if (time == 0) { return "00"; } else { return time; } }
-      const fD = new Date(this.props.theData.localDepartureTime); let fDfull = <span><b>{makeTime(fD.getHours()) + ":" + makeTime(fD.getMinutes())}</b> {fD.getDate() + "/" + (fD.getMonth() + 1) + "/"}<small>{fD.getFullYear()}</small></span>;
-      const fA = new Date(this.props.theData.localArrivalTime); let fAfull = <span><b>{makeTime(fA.getHours()) + ":" + makeTime(fA.getMinutes())}</b> {fA.getDate() + "/" + (fA.getMonth() + 1) + "/"}<small>{fA.getFullYear()}</small></span>;
+      const fD = new Date(this.props.theData.localDepartureTime); let fDfull = <span><b>{this.makeTime(fD.getHours()) + ":" + this.makeTime(fD.getMinutes())}</b> {fD.getDate() + "/" + (fD.getMonth() + 1) + "/"}<small>{fD.getFullYear()}</small></span>;
+      const fA = new Date(this.props.theData.localArrivalTime); let fAfull = <span><b>{this.makeTime(fA.getHours()) + ":" + this.makeTime(fA.getMinutes())}</b> {fA.getDate() + "/" + (fA.getMonth() + 1) + "/"}<small>{fA.getFullYear()}</small></span>;
 
       return (
         <div className={QuickFlightclasses}>
