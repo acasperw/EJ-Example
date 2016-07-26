@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import classNames from "classNames";
-import TestUtils from "react-addons-test-utils";
 
 // ES6 (statefull) Component
 class GlobalHeader extends React.Component {

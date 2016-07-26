@@ -44,7 +44,7 @@ class DetailFlightInfo extends React.Component {
           <div className="detail-right"><h3>Child Price:</h3>£{this.props.data.prices.child.valueWithDebitCard}</div>
         </div>
 
-        <a className="button">Book Now<span className="icon icon-angle-right"></span></a>
+        <a href="#" className="button">Book Now<span className="icon icon-angle-right"></span></a>
 
         <span className="button flight-close-button" onClick={this.props.onClick}>Close</span>
       </div>
