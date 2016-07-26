@@ -26,6 +26,11 @@ npm run build
 Compiles the JSX to JS 
 Compiles less to css & minified css
 
+```sh
+npm run test
+```
+Runs Jest/Jasmine tests 
+
 ## Further Detail
 
  Used: 
